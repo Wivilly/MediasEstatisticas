@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Medias Estatísticas</string>
+    <string name="valor_um">Valor 1:</string>
+    <string name="valor_dois">Valor 2:</string>
+    <string name="valor_tres">Valor 3:</string>
+    <string name="valor_quatro">Valor 4:</string>
+    <string name="valor_cinco">Valor 5:</string>
+    <string name="hint_informe_numero">Informe um número</string>
+    <string name="btn_media_aritmetica">Média Aritmética</string>
+    <string name="btn_media_ponderada">Média Ponderada</string>
+    <string name="btn_media_Harmonica">Média Harmônica</string>
+</resources>

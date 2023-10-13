@@ -9,4 +9,7 @@
     <string name="btn_media_aritmetica">Média Aritmética</string>
     <string name="btn_media_ponderada">Média Ponderada</string>
     <string name="btn_media_Harmonica">Média Harmônica</string>
+    <string name="media_aritmetica">Média Aritmetica</string>
+    <string name="media_ponderada">Média Ponderada</string>
+    <string name="media_harmonica">Média Harmonica</string>
 </resources>

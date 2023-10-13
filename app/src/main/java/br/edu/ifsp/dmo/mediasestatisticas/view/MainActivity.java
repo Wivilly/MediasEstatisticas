@@ -2,11 +2,11 @@ package br.edu.ifsp.dmo.mediasestatisticas.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnPonderada;
     private Button btnHarmonica;
 
-
+    ArrayList<Double> numeros;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,24 +48,41 @@ public class MainActivity extends AppCompatActivity {
         btnAritmetica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Click Aritmetica");
+                Intent intent = new Intent(MainActivity.this, AritmeticaActivity.class);
+                intent.putExtra("keyAritmetica", numeros);
+                startActivity(intent);
             }
         });
 
         btnPonderada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Click Pondetada");
+                Intent intent = new Intent(MainActivity.this, AritmeticaActivity.class);
+                intent.putExtra("keyPonderada", numeros);
+                startActivity(intent);
             }
         });
 
         btnHarmonica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Click Harmonica");
+                Intent intent = new Intent(MainActivity.this, AritmeticaActivity.class);
+                intent.putExtra("keyHarmonica", numeros);
+                startActivity(intent);
             }
         });
     }
 
-    public void leitura(){}
+    public ArrayList<Double> leitura() throws NumberFormatException{
+        try {
+            numeros.add(Double.parseDouble(valor_um.getText().toString()));
+            numeros.add(Double.parseDouble(valor_dois.getText().toString()));
+            numeros.add(Double.parseDouble(valor_tres.getText().toString()));
+            numeros.add(Double.parseDouble(valor_quatro.getText().toString()));
+            numeros.add(Double.parseDouble(valor_cinco.getText().toString()));
+        }catch (NumberFormatException ex){
+            Toast.makeText(this, "Erro na leitura de dados.", Toast.LENGTH_SHORT).show();
+        }
+        return numeros;
+    }
 }
